@@ -1,45 +1,17 @@
-# definição de uma função 
+import pygame
 
-def soma(a,b):
-    print(a+b)
+#inicializando modulos de pygame
+pygame.init()
+#criando uma janela com o titulo "ola, mundo"
+janela = pygame.display.set_mode((400,300))
+pygame.display.set_caption("ola mundo")
 
-def sub(a,b):
-    print(a-b)
-
-soma(1,3)
-soma(6,9)
-sub(1,1)
-sub(9,8)
-
-# funçao com return apos uma chamada 
-
-def soma2(a,b):
-    return a+b
-
-print (soma2(3,3))
-
-#pesquisa em lista
-
-def pesquise(lista, valor):
-    for x,e in enumerate(lista):
-        if e == valor:
-            return x
-    return None
-L=[10, 20, 25, 30]
-print(pesquise(L, 25))
-print(pesquise(L, 27))
-
-#calculo da media de uma lista
-
-def soma3(L1):
-    total=0
-    for e in L1:
-        total+=e
-    return total
-def media(L1):
-    return(soma3(L1)/len(L1))
-
-L1 = [20, 23, 26, 33, 40]
-
-print(soma3(L1))
-print(media(L1))
+deve_continuar = True
+#loop do jogo
+while deve_continuar:
+    #checando eventos
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            deve_continuar = False
+#encerrendo o modolos de pygame
+pygame.quit()
